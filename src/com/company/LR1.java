@@ -439,7 +439,7 @@ public class LR1 {
                     else {
                         Map<String, TableItem> curTableItem = LR_Table.getOrDefault(numberMap.get(itemSet),new HashMap<>());
                         //curTable 是 [a 展望符,TableItem(r(表示规约),产生式的编号) 默认数值-1表示找不到这个产生式(正常不会出现才对)
-                        curTableItem.put(item.getExpect_symbol(), new TableItem("r", expressionNumberMap.getOrDefault(item.getExpression(), -1)));
+                        curTableItem.put(item.getExpect_symbol(), new TableItem("r", expressionNumberMap.getOrDefault(item.getExpression().getOriginExpression(), -1)));
                         LR_Table.put(numberMap.get(itemSet), curTableItem);
                     }
                 }
