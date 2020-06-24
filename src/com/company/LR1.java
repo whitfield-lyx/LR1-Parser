@@ -29,7 +29,7 @@ public class LR1 {
     //终结符集合
     private String[] terminal = {"{","}","if","(",")","then","else","while","ID","=",">","<","==",">=","<=","+","-","/","*","ID","NUM","E",";","$"};
     private List<String> terminalList =  Arrays.asList(terminal);
-    class Item implements Comparable{
+    static class Item implements Comparable{
         Expression expression = new Expression("program -> compoundstmt");
         int position = 0; //位置来表示项目
         String expect_symbol;
@@ -241,7 +241,7 @@ public class LR1 {
             }*/
         }
     //产生式的结构
-    class Expression{
+    static class Expression{
         String originExpression = "program -> compoundstmt";
         String left;
         String []rights;
@@ -396,11 +396,10 @@ public class LR1 {
             System.out.println("");
         }*/
     }
-    class TableItem {
+    static class TableItem {
         // err代表错误 s代移入操作 r代表规约操作
         String type = "err";
         Integer target = 0; //产生式编号
-
         public TableItem(String type, Integer target) {
             this.type = type;
             this.target = target;
@@ -409,7 +408,6 @@ public class LR1 {
         public String getType() {
             return type;
         }
-
         @Override
         public String toString() {
             return type +""+target;
@@ -519,8 +517,6 @@ public class LR1 {
         int i = 0;
         Integer s;
         String a = input.get(i++);
-
-
         while (true){
             //令s是栈顶的状态
             s = stateStack.peek();
@@ -546,7 +542,6 @@ public class LR1 {
                 s = stateStack.peek();
                 //将规约的左侧A压入输出栈中
                     outputStack.push(curExpression.left);
-
                     //输出
                     List<String> outputStringList =  new ArrayList<String>(outputStack);
                     outputStringList.remove(0);
@@ -580,13 +575,13 @@ public class LR1 {
             }
         }
     }
-
     public void outputResult(){
-
         Collections.reverse(outputList);
-        for(String res : outputList){
-            System.out.println(res);
+        int j;
+        for(j = 0;j<outputList.size()-1;j++){
+            System.out.println(outputList.get(j));
         }
+        System.out.print(outputList.get(j));
     }
     public void run(){
         initSymbolSet();
