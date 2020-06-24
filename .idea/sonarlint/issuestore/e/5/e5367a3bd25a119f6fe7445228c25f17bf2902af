@@ -1,0 +1,49 @@
+
+V	java:S106Ò"9Replace this use of System.out or System.err by a logger.(Ô½Óª8Íè¼¬®.
+V	java:S106Ö"9Replace this use of System.out or System.err by a logger.(ƒ©·Ù8Íè¼¬®.
+n	java:S117°"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óôâç8¤“Ë©®.
+u
+java:S3776©"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÅÏ³³ıÿÿÿÿ8úÃ›¬®.
+p
+java:S3776£"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ó²êì8¤“Ë©®.
+t	java:S116#"XRename this field "expect_symbol" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º¯Ùé8¤“Ë©®.
+
+java:S1319Ã"sThe return type of this method should be an interface such as "SortedSet" rather than the implementation "TreeSet".( „ä8¤“Ë©®.
+W
+java:S4973Ş"9Use the "equals" method if value comparison was intended.(Òáû±8¤“Ë©®.
+s	java:S116$"WRename this field "max_position" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıÏÍ8¤“Ë©®.
+m
+java:S2175º"JA "Map<String, Integer>" cannot contain a "Expression" in a "String" type.(ÏÃÌåùÿÿÿÿ8ˆÆ¬®.
+u
+java:S3776½"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(¨¶³üÿÿÿÿ8¤“Ë©®.
+p	java:S100Î"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î–ğİıÿÿÿÿ8¤“Ë©®.
+j	java:S100A"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎËÇÂ8ïƒª®.
+R
+java:S1066Õ"/Merge this if statement with the enclosing one.(âÓ Ñùÿÿÿÿ8¤“Ë©®.
+f
+java:S1117³"CRename "originExpression" which hides the field declared at line 6.(¢áóÊûÿÿÿÿ8¤“Ë©®.
+W
+java:S4973Ë"9Use the "equals" method if value comparison was intended.(Òáû±8¤“Ë©®.
+n	java:S117±"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§î™Á8¤“Ë©®.
+˜
+java:S1319Î"uThe type of the "itemSet" object should be an interface such as "SortedSet" rather than the implementation "TreeSet".(Î–ğİıÿÿÿÿ8¤“Ë©®.
+Z
+java:S1117š"<Rename "variable" which hides the field declared at line 26.(ö½øì8¤“Ë©®.
+™
+java:S1319£"{The type of the "originItemSet" object should be an interface such as "SortedSet" rather than the implementation "TreeSet".(ó²êì8¤“Ë©®.
+–
+java:S1319Î"sThe return type of this method should be an interface such as "SortedSet" rather than the implementation "TreeSet".(Î–ğİıÿÿÿÿ8¤“Ë©®.
+p	java:S100©"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅÏ³³ıÿÿÿÿ8 àé«®.
+L
+java:S3740 "/Provide the parametrized type for this generic.(ğ ÁÂ8¤“Ë©®.
+u	java:S116¨"SRename this field "LR_Table" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°’‡üÿÿÿÿ8ì¦ÿ©®.
+j	java:S100="NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù ãä8¤“Ë©®.
+‘
+java:S1319£"sThe return type of this method should be an interface such as "SortedSet" rather than the implementation "TreeSet".(ó²êì8¤“Ë©®.
+V	java:S106Ô"9Replace this use of System.out or System.err by a logger.(éÎ¶’8Íè¼¬®.
+u
+java:S1192"XDefine a constant instead of duplicating this literal "program -> compoundstmt" 4 times.(™É‹æ8ÄõªÖ­.
+r	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä—µõşÿÿÿÿ8¤“Ë©®.
+>
+java:S1116"Remove this empty statement.(íßú™úÿÿÿÿ8‰¢üÍ­.
+g	java:S112i"FDefine and throw a dedicated exception instead of using a generic one.(•˜¬õıÿÿÿÿ8¤“Ë©®.
