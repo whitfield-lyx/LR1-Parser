@@ -501,6 +501,13 @@ public class LR1 {
         ArrayList<String> input = new ArrayList<>();
         String []inputToken = prog.toString().split("\\s+");
         input.addAll(Arrays.asList(inputToken));
+        //输出初始输入
+        String inputString = new String();
+        for (String output : input){
+            inputString += output+" ";
+        }
+        inputString += "=>";
+        outputList.add(inputString);
         //输入字符串加上结束标记$
         input.add("$");
         //状态栈 初始为0
@@ -512,6 +519,8 @@ public class LR1 {
         int i = 0;
         Integer s;
         String a = input.get(i++);
+
+
         while (true){
             //令s是栈顶的状态
             s = stateStack.peek();
@@ -548,7 +557,7 @@ public class LR1 {
                     for(int j = i-1; j<input.size()-1;j++){
                         outputString += input.get(j)+" ";
                     }
-                    outputString +=" =>";
+                    outputString +="=>";
                     outputList.add(outputString);
 
                 //将Goto[t,A]压入状态栈中
@@ -562,6 +571,7 @@ public class LR1 {
                     }
             }
             else if(curTableItem.getType().equals("acc")){
+                outputList.add("program =>");
                 break;
             }
             else{
@@ -572,7 +582,7 @@ public class LR1 {
     }
 
     public void outputResult(){
-        outputList.add("program =>");
+
         Collections.reverse(outputList);
         for(String res : outputList){
             System.out.println(res);

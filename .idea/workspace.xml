@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1e252f81-ad95-44a9-8c27-856221a5e1af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LR/com/company/LR1$Expression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LR/com/company/LR1$Expression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LR/com/company/LR1$TableItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LR/com/company/LR1$TableItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LR/com/company/LR1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LR/com/company/LR1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/LR1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LR1.java" afterDir="false" />
     </list>
@@ -77,7 +75,7 @@
       <updated>1592790428574</updated>
       <workItem from="1592790432202" duration="16487000" />
       <workItem from="1592966460133" duration="22088000" />
-      <workItem from="1592996049457" duration="6963000" />
+      <workItem from="1592996049457" duration="7703000" />
     </task>
     <servers />
   </component>
@@ -94,5 +92,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/LR1.java</url>
+          <line>573</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
