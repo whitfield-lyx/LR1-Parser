@@ -268,13 +268,21 @@ public class LR1 {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
             Expression that = (Expression) o;
 
-            if (!originExpression.equals(that.originExpression)) return false;
-            if (left != null ? !left.equals(that.left) : that.left != null) return false;
+            if (!originExpression.equals(that.originExpression)) {
+                return false;
+            }
+            if (left != null ? !left.equals(that.left) : that.left != null) {
+                return false;
+            }
             // Probably incorrect - comparing Object[] arrays with Arrays.equals
             return Arrays.equals(rights, that.rights);
         }
@@ -383,8 +391,9 @@ public class LR1 {
         for(TreeSet<Item> state:stateSet){
             System.out.println("-----"+ (cnt++) +"-----");
             for(Item item : state){
-                System.out.println(item.getExpression()+" , "+item.getPosition()+" , "+item.getExpect_symbol());
+                System.out.println(item.getExpression()+" , "+item.getPosition()+" , "+item.getExpect_symbol() +"\t");
             }
+            System.out.println("");
         }*/
     }
     class TableItem {
@@ -403,7 +412,11 @@ public class LR1 {
 
         @Override
         public String toString() {
-            return type +" " +target;
+            return type +""+target;
+        }
+
+        public Integer getTarget() {
+            return target;
         }
     }
     //对状态集合进行编号
@@ -463,15 +476,108 @@ public class LR1 {
                 }
             }
         }
-        System.out.println("\nLR1Table:");
+        /*System.out.println("\nLR1Table:");
         for(Map.Entry<Integer,Map<String,TableItem>> tableRow: LR_Table.entrySet()){
-            System.out.println(tableRow.getKey()+" : " );
+            System.out.print(tableRow.getKey()+" : " );
             for(Map.Entry<String,TableItem> tableItem : tableRow.getValue().entrySet()){
-               System.out.println("\t"+tableItem.getKey()+" : "+tableItem.getValue());
+               System.out.print("\t"+tableItem.getKey()+" "+tableItem.getValue()+"\t");
            }
+            System.out.println(" ");
+        }*/
+    }
+    //程序输入字符串
+    private  StringBuffer prog = new StringBuffer();
+    private  List<String> outputList = new ArrayList<>();
+    public void read_prog() {
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNextLine()) {
+            prog.append(sc.nextLine());
+            prog.append(' ');
+            prog.append('\n');
+        }
+    }
+    public void LR_analysis(){
+        //处理输入字符串 空格分割为一个一个单词
+        ArrayList<String> input = new ArrayList<>();
+        String []inputToken = prog.toString().split("\\s+");
+        input.addAll(Arrays.asList(inputToken));
+        //输入字符串加上结束标记$
+        input.add("$");
+        //状态栈 初始为0
+        Stack<Integer> stateStack = new Stack<>();
+        stateStack.push(0);
+        //输出栈 初始为$
+        Stack<String> outputStack = new Stack<>();
+        outputStack.push("$");
+        int i = 0;
+        Integer s;
+        String a = input.get(i++);
+        while (true){
+            //令s是栈顶的状态
+            s = stateStack.peek();
+            Map<String, TableItem> curTableRow = LR_Table.get(s);
+            TableItem curTableItem = curTableRow.getOrDefault(a,new TableItem("err",-1));
+            //if(Action[s,a]=st)
+            if (curTableItem.getType().equals("s")){
+                //将t压入状态栈中
+                stateStack.push(curTableItem.getTarget());
+                //将a移入输出栈 并指向下一个符号
+                outputStack.push(a);
+                a = input.get(i++);
+            }//Action[s,a] = 规约 A->β
+            else if(curTableItem.getType().equals("r")){
+                //从栈中弹出|β|个符号
+                String expression = expressionStringMap.get(curTableItem.getTarget());
+                Expression curExpression = new Expression(expression);
+                int popNumber = curExpression.getRights().length;
+                for(int j = 0;j<popNumber;j++){
+                    outputStack.pop();
+                    stateStack.pop();
+                }
+                s = stateStack.peek();
+                //将规约的左侧A压入输出栈中
+                    outputStack.push(curExpression.left);
+
+                    //输出
+                    List<String> outputStringList =  new ArrayList<String>(outputStack);
+                    outputStringList.remove(0);
+                    String outputString = new String();
+                    for (String output : outputStringList){
+                        outputString += output+" ";
+                    }
+                    for(int j = i-1; j<input.size()-1;j++){
+                        outputString += input.get(j)+" ";
+                    }
+                    outputString +=" =>";
+                    outputList.add(outputString);
+
+                //将Goto[t,A]压入状态栈中
+                    Map<String, TableItem> gotoTableRow = LR_Table.get(s);
+                    TableItem gotoTableItem =gotoTableRow.getOrDefault(outputStack.peek(),new TableItem("err",-1));
+                    if (gotoTableItem.getType().equals("g")){
+                        stateStack.push(gotoTableItem.getTarget());
+                    }
+                    else{
+                        System.out.println("Goto Error");
+                    }
+            }
+            else if(curTableItem.getType().equals("acc")){
+                break;
+            }
+            else{
+                a = "E";
+                i--;
+            }
         }
     }
 
+    public void outputResult(){
+        outputList.add("program =>");
+        Collections.reverse(outputList);
+        for(String res : outputList){
+            System.out.println(res);
+        }
+    }
     public void run(){
         initSymbolSet();
         initExpressionMap();
@@ -479,5 +585,8 @@ public class LR1 {
         initStateSet();
         initStateMap();
         initLR_table();
+        read_prog();
+        LR_analysis();
+        outputResult();
     }
 }
