@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1e252f81-ad95-44a9-8c27-856221a5e1af" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e5367a3bd25a119f6fe7445228c25f17bf2902af" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e5367a3bd25a119f6fe7445228c25f17bf2902af" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR Data.md" beforeDir="false" afterPath="$PROJECT_DIR$/LR Data.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/LR1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LR/com/company/LR1$Expression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LR/com/company/LR1$Expression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LR/com/company/LR1$Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LR/com/company/LR1$Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LR/com/company/LR1$TableItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LR/com/company/LR1$TableItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LR/com/company/LR1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LR/com/company/LR1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Java_LRParserAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Java_LRParserAnalysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/LR1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LR1.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,6 +34,7 @@
   </component>
   <component name="ProjectId" id="1defMCCkM7QxN0bmBYGqe6ENKZX" />
   <component name="PropertiesComponent">
+    <property name="SONARLINT_ISSUES_SPLIT_PROPORTION" value="0.5116405" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -36,6 +44,8 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -73,9 +83,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.test" />
+      <module name="LR" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Java_LRParserAnalysis" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -93,6 +117,8 @@
       <workItem from="1592790432202" duration="16487000" />
       <workItem from="1592966460133" duration="22088000" />
       <workItem from="1592996049457" duration="10065000" />
+      <workItem from="1593015545929" duration="17958000" />
+      <workItem from="1593065414225" duration="11136000" />
     </task>
     <servers />
   </component>
@@ -104,7 +130,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

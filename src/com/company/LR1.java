@@ -193,7 +193,6 @@ public class LR1 {
             firstMap.put(terminalItem,firstSet);
         }
         HashMap<String, TreeSet<String>> firstMapCopy = new HashMap<>();
-
             while (!firstMap.equals(firstMapCopy)) {
                 firstMapCopy = (HashMap<String, TreeSet<String>>) firstMap.clone();
                 for (String variableItem : variable) {
@@ -346,10 +345,10 @@ public class LR1 {
                 continue;
             }
             if(item.getFollowSymbol().equals(symbol)){
-                if (item.position<item.max_position) {
+                //if (item.position<item.max_position) {
                     Item followItem = new Item(item.getExpression(), item.getPosition() + 1, item.getExpect_symbol());
                     followItemSet.add(followItem);
-                }
+                //}
             }
         }
         return closure(followItemSet);
@@ -454,7 +453,7 @@ public class LR1 {
                         LR_Table.put(numberMap.get(itemSet), curTableItem);
                     }
                 }
-                else if (position<item.getMax_position()){
+                else/* if (position<item.getMax_position())*/{
                     String followSymbol = item.getFollowSymbol();
                     //[A->α.aβ,b] 终结符 移入 Action[i,a] = sj
                     if(isTerminal(followSymbol)){
@@ -464,7 +463,7 @@ public class LR1 {
                         curTableItem.put(followSymbol,new TableItem("s",numberMap.getOrDefault(gotoSet,-1)));
                         LR_Table.put(numberMap.get(itemSet),curTableItem);
                     }//[A->α.Bβ,b] 非终结符 状态转移 Goto[i,B] = j
-                    else if(isVariable(followSymbol)){
+                    else /*if(isVariable(followSymbol))*/{
                         Map<String, TableItem> curTableItem = LR_Table.getOrDefault(numberMap.get(itemSet),new HashMap<>());
                         TreeSet<Item> gotoSet = go_to(itemSet,followSymbol);
                         //curTable 是 [a 当前字符,TableItem(g(表示转移),状态的编号) 默认数值-1表示找不到这个产生式(正常不会出现才对)

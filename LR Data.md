@@ -2174,6 +2174,7 @@ ifstmt -> if ( boolexpr ) then stmt else stmt' , 8 , else
 
 ## 测试输入	
 
-{
-ID = NUM ; 
-} 
+{ ID = NUM ; }
+{ while ( ID == NUM ) { ID = NUM } }
+{ ID = ID + NUM ; }
+

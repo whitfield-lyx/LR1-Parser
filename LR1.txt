@@ -2025,142 +2025,144 @@ whilestmt -> while ( boolexpr ) stmt' , 0 , else
 ifstmt -> if ( boolexpr ) then stmt else stmt' , 8 , else	
 
 LR1Table:
-0 : 	compoundstmt g1		{ s2	 
-1 : 	$ acc0	 
-2 : 	stmts g10		whilestmt g12		assgstmt g5		ifstmt g8		E s3		compoundstmt g6		ID s4		{ s13		while s11		if s7		stmt g9	 
-3 : 	} r6	 
-4 : 	= s14	 
-5 : 	E r26		ID r26		{ r26		while r26		if r26		} r26	 
-6 : 	E r27		ID r27		{ r27		while r27		if r27		} r27	 
-7 : 	( s15	 
-8 : 	E r24		ID r24		{ r24		while r24		if r24		} r24	 
-9 : 	whilestmt g12		stmts g16		assgstmt g5		ifstmt g8		E s3		compoundstmt g6		ID s4		{ s13		while s11		if s7		stmt g9	 
-10 : 	} s17	 
-11 : 	( s18	 
-12 : 	E r25		ID r25		{ r25		while r25		if r25		} r25	 
-13 : 	stmts g19		whilestmt g12		assgstmt g5		ifstmt g8		E s3		compoundstmt g6		ID s4		{ s13		while s11		if s7		stmt g9	 
-14 : 	multexpr g24		simpleexpr g25		NUM s22		( s20		ID s21		arithexpr g23	 
-15 : 	multexpr g31		simpleexpr g32		NUM s28		( s26		ID s27		arithexpr g29		boolexpr g30	 
-16 : 	} r5	 
-17 : 	$ r8	 
-18 : 	multexpr g31		simpleexpr g32		NUM s28		( s26		ID s27		arithexpr g29		boolexpr g33	 
-19 : 	} s34	 
-20 : 	multexpr g39		simpleexpr g40		NUM s37		( s35		ID s36		arithexpr g38	 
-21 : 	E r17		* r17		+ r17		; r17		- r17		/ r17	 
-22 : 	E r18		* r18		+ r18		; r18		- r18		/ r18	 
-23 : 	; s41	 
-24 : 	E s44		arithexprprime g45		+ s42		- s43	 
-25 : 	multexprprime g49		E s48		* s46		/ s47	 
-26 : 	multexpr g39		simpleexpr g40		NUM s37		( s35		ID s36		arithexpr g50	 
-27 : 	== r17		<= r17		E r17		* r17		+ r17		< r17		- r17		> r17		/ r17		>= r17	 
-28 : 	== r18		<= r18		E r18		* r18		+ r18		< r18		- r18		> r18		/ r18		>= r18	 
-29 : 	boolop g56		== s53		<= s52		< s51		> s54		>= s55	 
-30 : 	) s57	 
-31 : 	E s60		arithexprprime g61		+ s58		- s59	 
-32 : 	multexprprime g65		E s64		* s62		/ s63	 
-33 : 	) s66	 
-34 : 	E r8		ID r8		{ r8		while r8		if r8		} r8	 
-35 : 	multexpr g39		simpleexpr g40		NUM s37		( s35		ID s36		arithexpr g67	 
-36 : 	E r17		) r17		* r17		+ r17		- r17		/ r17	 
-37 : 	E r18		) r18		* r18		+ r18		- r18		/ r18	 
-38 : 	) s68	 
-39 : 	E s71		arithexprprime g72		+ s69		- s70	 
-40 : 	multexprprime g76		E s75		* s73		/ s74	 
-41 : 	E r15		ID r15		{ r15		while r15		if r15		} r15	 
-42 : 	multexpr g77		simpleexpr g25		NUM s22		( s20		ID s21	 
-43 : 	multexpr g78		simpleexpr g25		NUM s22		( s20		ID s21	 
-44 : 	; r22	 
-45 : 	; r23	 
-46 : 	simpleexpr g79		NUM s22		( s20		ID s21	 
-47 : 	simpleexpr g80		NUM s22		( s20		ID s21	 
-48 : 	E r14		+ r14		; r14		- r14	 
-49 : 	E r16		+ r16		; r16		- r16	 
-50 : 	) s81	 
-51 : 	NUM r0		( r0		ID r0	 
-52 : 	NUM r2		( r2		ID r2	 
-53 : 	NUM r4		( r4		ID r4	 
-54 : 	NUM r1		( r1		ID r1	 
-55 : 	NUM r3		( r3		ID r3	 
-56 : 	multexpr g39		simpleexpr g40		NUM s37		( s35		ID s36		arithexpr g82	 
-57 : 	then s83	 
-58 : 	multexpr g84		simpleexpr g32		NUM s28		( s26		ID s27	 
-59 : 	multexpr g85		simpleexpr g32		NUM s28		( s26		ID s27	 
-60 : 	== r22		<= r22		< r22		> r22		>= r22	 
-61 : 	== r23		<= r23		< r23		> r23		>= r23	 
-62 : 	simpleexpr g86		NUM s28		( s26		ID s27	 
-63 : 	simpleexpr g87		NUM s28		( s26		ID s27	 
-64 : 	== r14		<= r14		E r14		+ r14		< r14		- r14		> r14		>= r14	 
-65 : 	== r16		<= r16		E r16		+ r16		< r16		- r16		> r16		>= r16	 
-66 : 	whilestmt g12		assgstmt g5		ifstmt g8		compoundstmt g6		ID s4		{ s13		while s11		if s7		stmt g88	 
-67 : 	) s89	 
-68 : 	E r19		* r19		+ r19		; r19		- r19		/ r19	 
-69 : 	multexpr g90		simpleexpr g40		NUM s37		( s35		ID s36	 
-70 : 	multexpr g91		simpleexpr g40		NUM s37		( s35		ID s36	 
-71 : 	) r22	 
-72 : 	) r23	 
-73 : 	simpleexpr g92		NUM s37		( s35		ID s36	 
-74 : 	simpleexpr g93		NUM s37		( s35		ID s36	 
-75 : 	E r14		) r14		+ r14		- r14	 
-76 : 	E r16		) r16		+ r16		- r16	 
-77 : 	E s44		arithexprprime g94		+ s42		- s43	 
-78 : 	E s44		arithexprprime g95		+ s42		- s43	 
-79 : 	multexprprime g96		E s48		* s46		/ s47	 
-80 : 	multexprprime g97		E s48		* s46		/ s47	 
-81 : 	== r19		<= r19		E r19		* r19		+ r19		< r19		- r19		> r19		/ r19		>= r19	 
-82 : 	) r10	 
-83 : 	whilestmt g105		assgstmt g99		ifstmt g102		compoundstmt g100		ID s98		{ s106		while s104		if s101		stmt g103	 
-84 : 	E s60		arithexprprime g107		+ s58		- s59	 
-85 : 	E s60		arithexprprime g108		+ s58		- s59	 
-86 : 	multexprprime g109		E s64		* s62		/ s63	 
-87 : 	multexprprime g110		E s64		* s62		/ s63	 
-88 : 	E r11		ID r11		{ r11		while r11		if r11		} r11	 
-89 : 	E r19		) r19		* r19		+ r19		- r19		/ r19	 
-90 : 	E s71		arithexprprime g111		+ s69		- s70	 
-91 : 	E s71		arithexprprime g112		+ s69		- s70	 
-92 : 	multexprprime g113		E s75		* s73		/ s74	 
-93 : 	multexprprime g114		E s75		* s73		/ s74	 
-94 : 	; r20	 
-95 : 	; r21	 
-96 : 	E r12		+ r12		; r12		- r12	 
-97 : 	E r13		+ r13		; r13		- r13	 
-98 : 	= s115	 
-99 : 	else r26	 
-100 : 	else r27	 
-101 : 	( s116	 
-102 : 	else r24	 
-103 : 	else s117	 
-104 : 	( s118	 
-105 : 	else r25	 
-106 : 	stmts g119		whilestmt g12		assgstmt g5		ifstmt g8		E s3		compoundstmt g6		ID s4		{ s13		while s11		if s7		stmt g9	 
-107 : 	== r20		<= r20		< r20		> r20		>= r20	 
-108 : 	== r21		<= r21		< r21		> r21		>= r21	 
-109 : 	== r12		<= r12		E r12		+ r12		< r12		- r12		> r12		>= r12	 
-110 : 	== r13		<= r13		E r13		+ r13		< r13		- r13		> r13		>= r13	 
-111 : 	) r20	 
-112 : 	) r21	 
-113 : 	E r12		) r12		+ r12		- r12	 
-114 : 	E r13		) r13		+ r13		- r13	 
-115 : 	multexpr g24		simpleexpr g25		NUM s22		( s20		ID s21		arithexpr g120	 
-116 : 	multexpr g31		simpleexpr g32		NUM s28		( s26		ID s27		arithexpr g29		boolexpr g121	 
-117 : 	whilestmt g12		assgstmt g5		ifstmt g8		compoundstmt g6		ID s4		{ s13		while s11		if s7		stmt g122	 
-118 : 	multexpr g31		simpleexpr g32		NUM s28		( s26		ID s27		arithexpr g29		boolexpr g123	 
-119 : 	} s124	 
-120 : 	; s125	 
-121 : 	) s126	 
-122 : 	E r7		ID r7		{ r7		while r7		if r7		} r7	 
-123 : 	) s127	 
-124 : 	else r8	 
-125 : 	else r15	 
-126 : 	then s128	 
-127 : 	whilestmt g105		assgstmt g99		ifstmt g102		compoundstmt g100		ID s98		{ s106		while s104		if s101		stmt g129	 
-128 : 	whilestmt g105		assgstmt g99		ifstmt g102		compoundstmt g100		ID s98		{ s106		while s104		if s101		stmt g130	 
-129 : 	else r11	 
-130 : 	else s131	 
-131 : 	whilestmt g105		assgstmt g99		ifstmt g102		compoundstmt g100		ID s98		{ s106		while s104		if s101		stmt g132	 
-132 : 	else r7	
+0: compoundstmt g2  { s1  
+1: stmts g4  ifstmt g9  E s11  compoundstmt g8  while s13  whilestmt g10  assgstmt g7  ID s3  { s5  if s6  stmt g12  
+2: $ acc0  
+3: = s14  
+4: } s15  
+5: stmts g16  ifstmt g9  E s11  compoundstmt g8  while s13  whilestmt g10  assgstmt g7  ID s3  { s5  if s6  stmt g12  
+6: ( s17  
+7: E r26  while r26  ID r26  { r26  if r26  } r26  
+8: E r27  while r27  ID r27  { r27  if r27  } r27  
+9: E r24  while r24  ID r24  { r24  if r24  } r24  
+10: E r25  while r25  ID r25  { r25  if r25  } r25  
+11: } r6  
+12: stmts g18  ifstmt g9  E s11  compoundstmt g8  while s13  whilestmt g10  assgstmt g7  ID s3  { s5  if s6  stmt g12  
+13: ( s19  
+14: NUM s25  ( s23  multexpr g20  simpleexpr g22  ID s24  arithexpr g21  
+15: $ r8  
+16: } s26  
+17: NUM s33  ( s31  boolexpr g29  multexpr g27  simpleexpr g30  ID s32  arithexpr g28  
+18: } r5  
+19: NUM s33  ( s31  boolexpr g34  multexpr g27  simpleexpr g30  ID s32  arithexpr g28  
+20: E s38  + s36  - s37  arithexprprime g35  
+21: ; s39  
+22: E s43  * s41  / s42  multexprprime g40  
+23: NUM s49  ( s46  multexpr g44  simpleexpr g45  ID s48  arithexpr g47  
+24: E r17  * r17  + r17  - r17  / r17  ; r17  
+25: E r18  * r18  + r18  - r18  / r18  ; r18  
+26: E r8  while r8  ID r8  { r8  if r8  } r8  
+27: E s53  + s51  - s52  arithexprprime g50  
+28: boolop g54  == s57  <= s56  < s55  > s58  >= s59  
+29: ) s60  
+30: E s64  * s62  / s63  multexprprime g61  
+31: NUM s49  ( s46  multexpr g44  simpleexpr g45  ID s48  arithexpr g65  
+32: == r17  <= r17  E r17  * r17  + r17  - r17  / r17  < r17  > r17  >= r17  
+33: == r18  <= r18  E r18  * r18  + r18  - r18  / r18  < r18  > r18  >= r18  
+34: ) s66  
+35: ; r23  
+36: NUM s25  ( s23  multexpr g67  simpleexpr g22  ID s24  
+37: NUM s25  ( s23  multexpr g68  simpleexpr g22  ID s24  
+38: ; r22  
+39: E r15  while r15  ID r15  { r15  if r15  } r15  
+40: E r16  + r16  - r16  ; r16  
+41: NUM s25  ( s23  simpleexpr g69  ID s24  
+42: NUM s25  ( s23  simpleexpr g70  ID s24  
+43: E r14  + r14  - r14  ; r14  
+44: E s74  + s72  - s73  arithexprprime g71  
+45: E s78  * s76  / s77  multexprprime g75  
+46: NUM s49  ( s46  multexpr g44  simpleexpr g45  ID s48  arithexpr g79  
+47: ) s80  
+48: E r17  ) r17  * r17  + r17  - r17  / r17  
+49: E r18  ) r18  * r18  + r18  - r18  / r18  
+50: == r23  <= r23  < r23  > r23  >= r23  
+51: NUM s33  ( s31  multexpr g81  simpleexpr g30  ID s32  
+52: NUM s33  ( s31  multexpr g82  simpleexpr g30  ID s32  
+53: == r22  <= r22  < r22  > r22  >= r22  
+54: NUM s49  ( s46  multexpr g44  simpleexpr g45  ID s48  arithexpr g83  
+55: NUM r0  ( r0  ID r0  
+56: NUM r2  ( r2  ID r2  
+57: NUM r4  ( r4  ID r4  
+58: NUM r1  ( r1  ID r1  
+59: NUM r3  ( r3  ID r3  
+60: then s84  
+61: == r16  <= r16  E r16  + r16  - r16  < r16  > r16  >= r16  
+62: NUM s33  ( s31  simpleexpr g85  ID s32  
+63: NUM s33  ( s31  simpleexpr g86  ID s32  
+64: == r14  <= r14  E r14  + r14  - r14  < r14  > r14  >= r14  
+65: ) s87  
+66: ifstmt g9  compoundstmt g8  while s13  whilestmt g10  assgstmt g7  ID s3  { s5  if s6  stmt g88  
+67: E s38  + s36  - s37  arithexprprime g89  
+68: E s38  + s36  - s37  arithexprprime g90  
+69: E s43  * s41  / s42  multexprprime g91  
+70: E s43  * s41  / s42  multexprprime g92  
+71: ) r23  
+72: NUM s49  ( s46  multexpr g93  simpleexpr g45  ID s48  
+73: NUM s49  ( s46  multexpr g94  simpleexpr g45  ID s48  
+74: ) r22  
+75: E r16  ) r16  + r16  - r16  
+76: NUM s49  ( s46  simpleexpr g95  ID s48  
+77: NUM s49  ( s46  simpleexpr g96  ID s48  
+78: E r14  ) r14  + r14  - r14  
+79: ) s97  
+80: E r19  * r19  + r19  - r19  / r19  ; r19  
+81: E s53  + s51  - s52  arithexprprime g98  
+82: E s53  + s51  - s52  arithexprprime g99  
+83: ) r10  
+84: ifstmt g106  compoundstmt g105  while s108  whilestmt g107  assgstmt g104  ID s100  { s101  if s103  stmt g102  
+85: E s64  * s62  / s63  multexprprime g109  
+86: E s64  * s62  / s63  multexprprime g110  
+87: == r19  <= r19  E r19  * r19  + r19  - r19  / r19  < r19  > r19  >= r19  
+88: E r11  while r11  ID r11  { r11  if r11  } r11  
+89: ; r20  
+90: ; r21  
+91: E r12  + r12  - r12  ; r12  
+92: E r13  + r13  - r13  ; r13  
+93: E s74  + s72  - s73  arithexprprime g111  
+94: E s74  + s72  - s73  arithexprprime g112  
+95: E s78  * s76  / s77  multexprprime g113  
+96: E s78  * s76  / s77  multexprprime g114  
+97: E r19  ) r19  * r19  + r19  - r19  / r19  
+98: == r20  <= r20  < r20  > r20  >= r20  
+99: == r21  <= r21  < r21  > r21  >= r21  
+100: = s115  
+101: stmts g116  ifstmt g9  E s11  compoundstmt g8  while s13  whilestmt g10  assgstmt g7  ID s3  { s5  if s6  stmt g12  
+102: else s117  
+103: ( s118  
+104: else r26  
+105: else r27  
+106: else r24  
+107: else r25  
+108: ( s119  
+109: == r12  <= r12  E r12  + r12  - r12  < r12  > r12  >= r12  
+110: == r13  <= r13  E r13  + r13  - r13  < r13  > r13  >= r13  
+111: ) r20  
+112: ) r21  
+113: E r12  ) r12  + r12  - r12  
+114: E r13  ) r13  + r13  - r13  
+115: NUM s25  ( s23  multexpr g20  simpleexpr g22  ID s24  arithexpr g120  
+116: } s121  
+117: ifstmt g9  compoundstmt g8  while s13  whilestmt g10  assgstmt g7  ID s3  { s5  if s6  stmt g122  
+118: NUM s33  ( s31  boolexpr g123  multexpr g27  simpleexpr g30  ID s32  arithexpr g28  
+119: NUM s33  ( s31  boolexpr g124  multexpr g27  simpleexpr g30  ID s32  arithexpr g28  
+120: ; s125  
+121: else r8  
+122: E r7  while r7  ID r7  { r7  if r7  } r7  
+123: ) s126  
+124: ) s127  
+125: else r15  
+126: then s128  
+127: ifstmt g106  compoundstmt g105  while s108  whilestmt g107  assgstmt g104  ID s100  { s101  if s103  stmt g129  
+128: ifstmt g106  compoundstmt g105  while s108  whilestmt g107  assgstmt g104  ID s100  { s101  if s103  stmt g130  
+129: else r11  
+130: else s131  
+131: ifstmt g106  compoundstmt g105  while s108  whilestmt g107  assgstmt g104  ID s100  { s101  if s103  stmt g132  
+132: else r7  
 
 
 {
 ID = NUM ;
 }
- 
+/t { ID = NUM ; }
+{ while ( ID == NUM ) { ID = NUM } }
+{ ID = ID + NUM ; }
